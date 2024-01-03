@@ -43,7 +43,7 @@ To set up the project:
 Detailed Script Explanations
 ----------------------------
 
-`ExpenseTracker.sql`:
+`expense_tracker.sql`:
 
 - **Expenses Table**: This table records individual expenses. It includes fields like ID, Date, CategoryID, Amount, and Description. The CategoryID field links to the Categories table, establishing a relational link.
 
