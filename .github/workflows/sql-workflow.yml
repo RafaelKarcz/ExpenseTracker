@@ -1,0 +1,22 @@
+name: Upload ExpenseTracker SQL Script
+
+on:
+  push:
+    paths:
+      - '*.sql'
+
+jobs:
+  upload-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'RafaelKarcz'
+        git config --global user.email 'rafael.karcz@gmail.com'
+        git add .
+        git commit -m "Automated commit for ExpenseTracker SQL changes" || echo "No changes to commit"
+        git push --quiet https://${{ secrets.MY_PERSONAL_TOKEN }}@github.com/RafaelKarcz/ExpenseTracker.git
